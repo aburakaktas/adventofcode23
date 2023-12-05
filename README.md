@@ -1,5 +1,5 @@
 # adventofcode23
 
 it's something
-¯\\_(ツ)_/¯
+¯\\\_(ツ)_/¯
 
