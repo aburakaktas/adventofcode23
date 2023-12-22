@@ -57,6 +57,7 @@ def main():
     lines = write_lines_to_list("data.txt")
     organized_lines = organize_lines(lines)
 
+    # solve part 1
     sum = 0
     flag = 0
     for game, turns in organized_lines.items():
@@ -73,6 +74,32 @@ def main():
         sum += game
     print(sum)
 
+
+    # solve part 2
+    sum = 0
+    for game_number, turns in organized_lines.items():
+        max_green = 0
+        max_red = 0
+        max_blue = 0
+        for turn in turns:
+            for color, count in turn.items():
+                if color == 'green':
+                    if count > max_green:
+                        max_green = count
+                if color == 'red':
+                    if count > max_red:
+                        max_red = count
+                if color == 'blue':
+                    if count > max_blue:
+                        max_blue = count
+        # print("max green:", max_green)
+        # print("max red:", max_red)
+        # print("max blue:", max_blue)
+        sum += max_green * max_red * max_blue
+    print(sum)
+
+
+    
 if __name__ == "__main__":
     main()
 
